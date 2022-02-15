@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import {Routes, Route, Link } from "react-router-dom";
 import { DropContainer } from "./components/DropContainer";
 import { Drop } from "./components/Drop";
+import { FaqContainer } from "./components/FaqContainer"; 
 
 function App() {
   const [drops, setDrops] = useState([]);
@@ -38,7 +39,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<LandingPage drops={drops} />} />
-          <Route path="/FAQS" element={<FAQS faqs={faqs}/>} />
+          <Route path="/FAQS" element={<FaqContainer faqs={faqs}/>} />
           <Route path="/PreviousDrops" element={<PreviousDrops drops={drops} />} />
           <Route path="/FutreDrops" element={<FutureDrops drops={drops} />} />
           <Route path="/ConnectAccounts" element={<ConnectAccounts />} />
