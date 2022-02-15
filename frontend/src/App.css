@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.header_logo{
+  height: 70px;
+  width: 70px;
+}

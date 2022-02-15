@@ -1,12 +1,12 @@
 
-export function Drop({name, timeRequired, streamerName, image, itemDefID}){
+export function Drop({item_name, unlock_condition, streamer_name, item_icon, itemDefID}){
 
     return (
         <>
-            <h1>Name: {name}</h1>
-            <h1>Watch Time: {timeRequired}</h1>
-            <h1>Streamer: {streamerName}</h1>
-            <img src={image}/>
+            <h1>Name: {item_name}</h1>
+            <h1>Watch Time: {unlock_condition}</h1>
+            <h1>Streamer: {streamer_name}</h1>
+            <a><img src={item_icon}/></a>
         </>
         
     )
