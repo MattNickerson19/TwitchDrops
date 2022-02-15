@@ -15,29 +15,17 @@ function App() {
     setDrops(data);
   }, []);
 
-  // const [faqs, setFaqs] = useState([]);
+  const [faqs, setFaqs] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('add faq api here')
-  //     .then((response) => response.json())
-  //     .then(setFaqs)
-  // }, []);
+  useEffect(async () => {
+    const promise = await fetch('/api/faq');
+    const data = await promise.json();
+    setFaqs(data);
+  }, []);
   
   return (
-
     <>
       <div className='App'>
-        {/*
-          Only using nav tags for place holder. Can implement a proper Nav Bar when design is finalized.
-          Could also include our template here as well since it will carry across all of the pages?
-        */}
-        {/* <nav>
-            <Link to="/">Home</Link>
-            <Link to="/FAQS">FAQS</Link>
-            <Link to="/PreviousDrops">Previous Drops</Link>
-            <Link to="/FutureDrops">Future Drops</Link>
-            <Link to="/ProjectWinter">Project Winter</Link>
-        </nav> */}
         <Routes>
           <Route path="/" element={<LandingPage drops={drops} />} />
           {/* <Route path="/FAQS" element={<FAQS faqs={faqs}/>} />
