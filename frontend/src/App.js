@@ -5,7 +5,7 @@ import { DropContainer } from "./components/DropContainer";
 import { Drop } from "./components/Drop";
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
-import { FaqContainer } from "./components/FaqContainer"; 
+import { FaqPage } from "./components/FaqPage"; 
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
       <div className='App'>
         <Routes>
           <Route path="/" element={<LandingPage drops={drops} />} />
-          <Route path="/FAQS" element={<FaqContainer faqs={faqs}/>} />
+          <Route path="/FAQS" element={<FaqPage faqs={faqs}/>} />
 {/*
           <Route path="/PreviousDrops" element={<PreviousDrops drops={drops} />} />
           <Route path="/FutreDrops" element={<FutureDrops drops={drops} />} />
