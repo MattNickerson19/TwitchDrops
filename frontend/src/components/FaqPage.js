@@ -6,7 +6,7 @@ export function FaqPage ({faqs}){
   return (
       <div>
         <Header></Header>
-        <FaqContainer faqss={faqs}></FaqContainer>
+        <FaqContainer faqs={faqs}></FaqContainer>
       </div>
     
   )
