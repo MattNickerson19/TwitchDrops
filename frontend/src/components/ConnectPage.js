@@ -36,7 +36,7 @@ export function ConnectAccounts() {
                     placeholder="Twitch Username"
                     name="username" />
             </form>
-            <br /><br /><br /><br />
+            <br /><br /><br />
             <form class="connect-form">
                 <h2>Please connect your Steam Account</h2>
                 <input onChange={handlePasswordChange}
