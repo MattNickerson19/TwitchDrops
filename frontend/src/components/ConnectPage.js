@@ -1,60 +1,88 @@
 import Header from "./Header"
 import { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 
 
 
 export function ConnectAccounts() {
 
-    const [values, setValues] = useState({
+    const [twitchValues, setTwitchValues] = useState({
         username: "",
         password: ""
     });
 
-    const handleUsernameChange = (event) => {
-        setValues({...values, username: event.target.value})
+    const [steamValues, setSteamValues] = useState({
+        username: "",
+        password: ""
+    });
+
+    const handleTwitchUsernameChange = (event) => {
+        setTwitchValues({...twitchValues, username: event.target.value})
     }
 
-    const handlePasswordChange = (event) => {
-        setValues({...values, password: event.target.value})
+    const handleTwitchPasswordChange = (event) => {
+        setTwitchValues({...twitchValues, password: event.target.value})
     }
+
+    const handleSteamUsernameChange = (event) => {
+        setSteamValues({...steamValues, username: event.target.value})
+    }
+
+    const handleSteamPasswordChange = (event) => {
+        setSteamValues({...steamValues, password: event.target.value})
+    }
+
+
 
     return (
         <>
         <Header></Header>
-        <div className="form-container">
-            <form className="connect-form">
-                <h2>Please connect your Twitch Account</h2>
-                <input onChange={handleUsernameChange}
-                    value={values.username}
-                    type="text" className="form-field"
-                    placeholder="Twitch Username"
-                    name="username" />
-                <input onChange={handlePasswordChange}
-                    value={values.username}
-                    type="text" className="form-field"
-                    placeholder="Twitch Password"
-                    name="username" />
+        <Form>
+            <Form.Group>
+                <h2>Connect to Twitch</h2>
+                <Form.Label>Twitch Username</Form.Label>
+                <Form.Control onChange={handleTwitchUsernameChange}
+                    value={twitchValues.username}
+                    type="text"
+                    placeholder="Enter Username"
+                    name="username"
+                    autoComplete="off" />
+                <Form.Label>Twitch Password</Form.Label>    
+                <Form.Control onChange={handleTwitchPasswordChange}
+                    value={twitchValues.password}
+                    type="text"
+                    placeholder="Enter Password"
+                    name="password"
+                    autoComplete="off" />
                 <br/>
-                <button type="submit" className="form-field">Connect Twitch Account</button>
-            </form>
+                <Button variant="outline-dark" type="submit">Connect Steam Account</Button>
+            </Form.Group>
             <br /><br /><br />
-            <form className="connect-form">
-                <h2>Please connect your Steam Account</h2>
-                <input onChange={handlePasswordChange}
-                    value={values.username}
-                    type="text" className="form-field"
-                    placeholder="Steam Username"
-                    name="username" />
-                <input onChange={handlePasswordChange}
-                    value={values.username}
-                    type="text" className="form-field"
-                    placeholder="Steam Password"
-                    name="username" />
+            <Form.Group>
+                <h2>Connect to Steam</h2>
+                <Form.Label>Steam Username</Form.Label>
+                <Form.Control onChange={handleSteamUsernameChange}
+                    value={steamValues.username}
+                    type="text"
+                    placeholder="Enter Username"
+                    name="username"
+                    autoComplete="off" />
+                <Form.Label>Steam Password</Form.Label>    
+                <Form.Control onChange={handleSteamPasswordChange}
+                    value={steamValues.password}
+                    type="text"
+                    placeholder="Enter Password"
+                    name="password"
+                    autoComplete="off"
+                    />
+                    {/*style={{width: '50%'}}*/}
                 <br/>
-                <button type="submit" className="form-field">Connect Steam Account</button>    
-            </form>
-        </div>
+                <Button variant="outline-dark" type="submit">Connect Steam Account</Button>    
+            </Form.Group>
+        </Form>
+
         </>
 
     )
