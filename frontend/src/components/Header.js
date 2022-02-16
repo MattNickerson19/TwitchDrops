@@ -14,7 +14,7 @@ const Header = () => {
             <Nav>
                 <Nav.Link href="#">Previous Drops</Nav.Link>
                 <Nav.Link href="#">Future Drops</Nav.Link>
-                <Nav.Link href="#">Connect</Nav.Link>
+                <Nav.Link href="/ConnectPage">Connect</Nav.Link>
                 <Nav.Link href="/FAQS">FAQ</Nav.Link>
                 <Nav.Link href="https://projectwinter.co/">Official Site</Nav.Link>
             </Nav>
