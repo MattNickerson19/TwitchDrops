@@ -12,6 +12,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls='menu'/>
         <Navbar.Collapse id='menu'>
             <Nav>
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#">Previous Drops</Nav.Link>
                 <Nav.Link href="#">Future Drops</Nav.Link>
                 <Nav.Link href="/ConnectPage">Connect</Nav.Link>

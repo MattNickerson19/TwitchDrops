@@ -42,12 +42,12 @@
   width: 70px;
 }
 
-.twitch_logo{
+.connect_bar_image{
   width: 100%;
 }
 
 .connect_bar{
   background-color: #2B2452;
-  text-align: left;
+  text-align: center;
   color: white;
 }
