@@ -1,4 +1,5 @@
 import Header from "./Header"
+import { useState } from "react";
 
 
 
@@ -22,7 +23,7 @@ export function ConnectAccounts() {
         <>
         <Header></Header>
         <div className="form-container">
-            <form class="connect-form">
+            <form className="connect-form">
                 <h2>Please connect your Twitch Account</h2>
                 <input onChange={handleUsernameChange}
                     value={values.username}
@@ -32,13 +33,13 @@ export function ConnectAccounts() {
                 <input onChange={handlePasswordChange}
                     value={values.username}
                     type="text" className="form-field"
-                    placeholder="Twitch Username"
+                    placeholder="Twitch Password"
                     name="username" />
                 <br/>
                 <button type="submit" className="form-field">Connect Twitch Account</button>
             </form>
             <br /><br /><br />
-            <form class="connect-form">
+            <form className="connect-form">
                 <h2>Please connect your Steam Account</h2>
                 <input onChange={handlePasswordChange}
                     value={values.username}
@@ -48,7 +49,7 @@ export function ConnectAccounts() {
                 <input onChange={handlePasswordChange}
                     value={values.username}
                     type="text" className="form-field"
-                    placeholder="Twitch Username"
+                    placeholder="Steam Password"
                     name="username" />
                 <br/>
                 <button type="submit" className="form-field">Connect Steam Account</button>    
@@ -58,3 +59,4 @@ export function ConnectAccounts() {
 
     )
 }
+
