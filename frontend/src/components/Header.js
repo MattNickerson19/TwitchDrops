@@ -16,7 +16,7 @@ const Header = () => {
                 <Nav.Link href="#">Future Drops</Nav.Link>
                 <Nav.Link href="#">Connect</Nav.Link>
                 <Nav.Link href="/FAQS">FAQ</Nav.Link>
-                <Nav.Link href="#">Official Site</Nav.Link>
+                <Nav.Link href="https://projectwinter.co/">Official Site</Nav.Link>
             </Nav>
         </Navbar.Collapse>
 

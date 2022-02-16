@@ -41,3 +41,13 @@
   height: 70px;
   width: 70px;
 }
+
+.twitch_logo{
+  width: 100%;
+}
+
+.connect_bar{
+  background-color: #2B2452;
+  text-align: left;
+  color: white;
+}
