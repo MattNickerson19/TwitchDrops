@@ -18,7 +18,6 @@ export function ConnectAccounts() {
         setValues({...values, password: event.target.value})
     }
 
-
     return (
         <>
         <Header></Header>
@@ -35,6 +34,8 @@ export function ConnectAccounts() {
                     type="text" className="form-field"
                     placeholder="Twitch Username"
                     name="username" />
+                <br/>
+                <button type="submit" className="form-field">Connect Twitch Account</button>
             </form>
             <br /><br /><br />
             <form class="connect-form">
@@ -49,8 +50,9 @@ export function ConnectAccounts() {
                     type="text" className="form-field"
                     placeholder="Twitch Username"
                     name="username" />
+                <br/>
+                <button type="submit" className="form-field">Connect Steam Account</button>    
             </form>
-            <button type="submit" className="form-field">Connect</button>
         </div>
         </>
 
