@@ -6,6 +6,29 @@ import { MongoClient } from 'mongodb';
 const app = express();
 app.use(bodyParser.json());
 
+const parseAndLabelDropDate = (startString, endString) => {
+    //parse the strings from db
+    let startDropYear = parseInt(startString.slice(6));
+    let startDropMonth = parseInt(startString.slice(3, 5).trim());
+    let startDropDay = parseInt(startString.slice(0, 2).trim());
+    let endDropYear = parseInt(endString.slice(6));
+    let endDropMonth = parseInt(endString.slice(3, 5).trim());
+    let endDropDay = parseInt(endString.slice(0, 2).trim());
+ 
+    //drop month is decremented because it's zero-counted
+    let startDate = new Date(startDropYear, (startDropMonth - 1), startDropDay);
+    let endDate = new Date(endDropYear, (endDropMonth -1), endDropDay);
+    let currentDate = new Date();
+
+    //return a string for the drop_status value
+    if(startDate < currentDate && endDate > currentDate){
+      return "current";
+    }else if(startDate < currentDate && endDate < currentDate){
+      return "past";
+    }else if(startDate > currentDate){
+      return "future";
+    }  
+  }
 
 //Get all drops currently stored in the DB
 app.get("/api/drops", async (req, res) => {
@@ -14,6 +37,9 @@ app.get("/api/drops", async (req, res) => {
         const db = client.db("pw_drops");
 
         const drops = await db.collection("drops").find({}).toArray();
+        for(let drop of drops){
+            drop.drop_status = parseAndLabelDropDate(drop.start_date, drop.end_date);
+          }
         res.status(200).json(drops);
         client.close();
     }
