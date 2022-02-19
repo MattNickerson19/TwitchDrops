@@ -9,12 +9,12 @@ export function DropContainer({drops = [], category}){
         dropBox.push(...drop.drops);
     }
     return (  
-            <Container fluid='auto'>
-                    <Row xs={1} md={2} lg={3} xl={4}>
-                    {dropBox.map( (drop) => {
-                        return (<Col key={drop.item_name}><Drop key={drop.item_name} {...drop} /></Col> ) 
-                    })}
-                    </Row>         
-            </Container>  
+        <Container fluid='auto' className='drop_container'>
+                <Row xs={1} md={2} lg={3} xl={4}>
+                {dropBox.map( (drop) => {
+                    return (<Col key={drop.item_name}><Drop key={drop.item_name} {...drop} /></Col> ) 
+                })}
+                </Row>         
+        </Container>  
     );
 }
