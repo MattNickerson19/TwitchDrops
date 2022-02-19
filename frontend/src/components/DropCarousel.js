@@ -13,6 +13,12 @@ export default function DropCarousel({drops}){
         { width: 768, itemsToShow: 3 },
         { width: 1200, itemsToShow: 4 }
       ];
+
+    //exclude all but the past drops
+    const dropBox = []
+    for(let drop of drops.filter(drop => drop.drop_status === "past")){
+        dropBox.push(...drop.drops);
+    }
     
   return (
    
@@ -26,7 +32,7 @@ export default function DropCarousel({drops}){
                 <div className="carousel-border">
                     <Row className="carousel-wrapper">
                         <Carousel breakPoints={breakPoints}>
-                            {drops.map((drop) => (
+                            {dropBox.map((drop) => (
                             <Drop key={drop.item_name} {...drop} />
                             ))}
                         </Carousel>

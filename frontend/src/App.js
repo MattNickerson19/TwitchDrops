@@ -18,8 +18,6 @@ function App() {
     setDrops(data);
   }, []);
 
-  const [faqs, setFaqs] = useState([]);
-
   const [faqs, setFaqs] = useState(null);
 
   useEffect(async () => {
