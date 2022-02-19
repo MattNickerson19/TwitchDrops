@@ -1,4 +1,5 @@
 import {Card} from 'react-bootstrap'
+import clock_image from '../images/clock.png'
 
 export function Drop({item_name, unlock_condition, streamer_name, item_icon, itemDefID}){
     return (
@@ -11,7 +12,7 @@ export function Drop({item_name, unlock_condition, streamer_name, item_icon, ite
             <Card.Img variant="top" src={item_icon} />
             <Card.Body>
                 <Card.Title>{item_name}</Card.Title>
-                <Card.Subtitle className='mb-2 text-muted'>{unlock_condition}</Card.Subtitle>
+                <Card.Subtitle className='mb-2 text-muted'><img src={clock_image} className='clock_image'/>{unlock_condition}</Card.Subtitle>
                 <Card.Title>{streamer_name}</Card.Title>
             </Card.Body>
             </Card>
