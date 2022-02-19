@@ -6,7 +6,7 @@ import { Drop } from "./components/Drop";
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import { FaqPage } from "./components/FaqPage"; 
-import { ConnectAccounts } from "./components/ConnectPage";
+
 
 
 function App() {
@@ -17,6 +17,13 @@ function App() {
     const data = await promise.json();
     setDrops(data);
   }, []);
+
+  /*useEffect(async () => {
+    const promise = await fetch('/drops.json');
+    const data = await promise.json();
+    setDrops(data);
+  }, []);*/
+
 
   const [faqs, setFaqs] = useState([]);
 
@@ -32,11 +39,11 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage drops={drops} />} />
           <Route path="/FAQS" element={<FaqPage faqs={faqs}/>} />
-          <Route path="/ConnectPage" element={<ConnectAccounts />} />
+          
 {/*
           <Route path="/PreviousDrops" element={<PreviousDrops drops={drops} />} />
           <Route path="/FutreDrops" element={<FutureDrops drops={drops} />} />
-          
+          <Route path="/ConnectPage" element={<ConnectAccounts />} />
           <Route path="/ProjectWinter" element={<ProjectWinter />} /> */}
         </Routes>
       </div>

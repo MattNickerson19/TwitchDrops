@@ -5,7 +5,7 @@ export function Drop({item_name, unlock_condition, streamer_name, item_icon, ite
         <>
             <Card 
             bg='dark'  
-            text='light'
+            text='white'
             style={{ width: '18rem' }}
             >
             <Card.Img variant="top" src={item_icon} />
