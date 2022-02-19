@@ -10,7 +10,7 @@ import { ConnectAccounts } from "./components/ConnectPage";
 
 
 function App() {
-  const [drops, setDrops] = useState([]);
+  const [drops, setDrops] = useState(null);
 
   useEffect(async () => {
     const promise = await fetch('/api/drops');
@@ -18,13 +18,16 @@ function App() {
     setDrops(data);
   }, []);
 
-  const [faqs, setFaqs] = useState([]);
+  const [faqs, setFaqs] = useState(null);
 
   useEffect(async () => {
     const promise = await fetch('/api/faq');
     const data = await promise.json();
     setFaqs(data);
   }, []);
+
+  if(drops == null) return null;
+  if(faqs == null) return null;
   
   return (
     <>

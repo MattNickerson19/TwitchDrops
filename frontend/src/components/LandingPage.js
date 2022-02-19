@@ -8,7 +8,7 @@ const LandingPage = ({drops}) => {
       <div>
         <Header></Header>
         <ConnectBar></ConnectBar>
-        <DropContainer drops={drops}></DropContainer>
+        <DropContainer drops={drops} category={"current"}></DropContainer>
       </div>
     
   )
