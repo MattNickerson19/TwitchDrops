@@ -6,10 +6,10 @@ import DropCarousel from "./DropCarousel";
 
 const LandingPage = ({drops}) => {
   return (
-      <div>
+      <div className="landing">
         <Header></Header>
         <ConnectBar></ConnectBar>
-        <DropContainer drops={drops}></DropContainer>
+        <DropContainer drops={drops} category={"current"}></DropContainer>
         <DropCarousel drops={drops} />
       </div>
     
