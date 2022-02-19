@@ -155,6 +155,11 @@
   z-index: 2;
 }
 
+.clock_image{
+  height: 22px;
+  margin-right: 10px;
+}
+
 @media screen and (min-width: 1150px) {
   .connect_bar::after{
     display: none;
