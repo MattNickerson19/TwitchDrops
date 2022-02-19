@@ -1,0 +1,39 @@
+[
+    {
+            "streamer_name" : "CoachStock",
+            "item_name": "Pink Hair",
+            "item_icon": "https://projectwinter.co/steam_inventory/i_PinkHair.png",
+            "itemdefid": 1535,
+            "unlock_condition": "15 minutes"
+    },
+    { "streamer_name" : "CoachStock",
+        "item_name": "Beach Bag (Blue)",
+        "item_icon": "https://projectwinter.co/steam_inventory/i_Backpack_BeachBlue_Sum.png",
+        "itemdefid": 1807,
+        "unlock_condition": "15 minutes"
+      },
+      { "streamer_name" : "CoachStock",
+        "item_name": "Red Visor",
+        "item_icon": "https://projectwinter.co/steam_inventory/i_VisorPoker.png",
+        "itemdefid": 532,
+        "unlock_condition": "15 minutes"
+      },
+      { "streamer_name" : "CoachStock",
+        "item_name": "Skidoo Helmet (Black)",
+        "item_icon": "https://projectwinter.co/steam_inventory/i_SkidooHelmetBlack.png",
+        "itemdefid": 829,
+        "unlock_condition": "15 minutes"
+      },
+      { "streamer_name" : "CoachStock",
+        "item_name": "Parisian Scarf (White)",
+        "item_icon": "https://projectwinter.co/steam_inventory/i_ScarfParisianWhite_SS.png",
+        "itemdefid": 901,
+        "unlock_condition": "15 minutes"
+      },
+      { "streamer_name" : "CoachStock",
+        "item_name": "Safety Boots (Orange)",
+        "item_icon": "https://projectwinter.co/steam_inventory/i_PantsSafetyOrange_SS.png",
+        "itemdefid": 1067,
+        "unlock_condition": "15 minutes"
+      }
+]

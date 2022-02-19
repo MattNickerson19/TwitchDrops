@@ -2,14 +2,24 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-img-top:hover {
+  animation: rotation 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*
+.card-subtitle{
+  color: gold;
+}
+*/
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(359deg);
   }
 }
 
@@ -26,15 +36,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .header_logo{
@@ -79,6 +80,71 @@
   margin-top: 20px;
 }
 
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 530px;
+  width: 100%;
+  margin: 26px;
+  padding-top: 35px;
+}
+
+.DropCarousel {
+  position: relative;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.carousel-wrapper::before {
+  content:"";
+  background-image: url('./images/carouselBackground.jpg');
+  opacity:.8;
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  width: 100%;
+  height: auto;
+  z-index:-3;
+  background-position: center;
+}
+
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: inset 0 0 1px 0px orange;
+}
+
+.carousel-title {
+  background-color: black;
+  color: #6441A5;
+  font-size: 250%;
+}
+
+.carousel-border{
+  border-bottom: black solid;
+  width: 102%;
+  display:flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-title-banner{
+  background-color: black;
+}
+
+/*.left-side-carousel-block{
+
+}
+
+.right-side-carousel-block{
+  column-width: 40%;
+}*/
 .landing{
   background-color: #61dafb;
 }
@@ -94,3 +160,4 @@
     display: none;
   }
 }
+
