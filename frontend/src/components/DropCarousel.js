@@ -2,6 +2,8 @@ import React from "react";
 import Carousel from "react-elastic-carousel";
 import { Drop }from "./Drop";
 import { Row, Col } from "react-bootstrap";
+import LeftSideImage from "../images/Hero_shot_hunter.png";
+import RightSideImage from "../images/Hero_shot_weasel.png";
 
 
 
@@ -24,10 +26,16 @@ export default function DropCarousel({drops}){
    
     <>
         <Row>
-            <Col className="carousel-title-banner"><strong className="carousel-title">PREVIOUS DROPS</strong></Col>
+            <Col className="carousel-title-banner">
+                <div className="carousel-title">
+                    <strong>PREVIOUS DROPS</strong>
+                </div>
+            </Col>
         </Row>
         <Row>
-            <Col className=" bg-black" md={2}></Col>
+            <Col className="bg-black" md={2}>
+                <img className="leftSide-carousel-image" src={LeftSideImage} />
+            </Col>
             <Col className="DropCarousel">
                 <div className="carousel-border">
                     <Row className="carousel-wrapper">
@@ -39,8 +47,13 @@ export default function DropCarousel({drops}){
                     </Row>
                 </div>
             </Col>
-            <Col className="bg-black" md={2}></Col>
+            <Col className="bg-black" md={2}>
+            <img className="rightSide-carousel-image" src={RightSideImage} />
+            </Col>
         </Row>
+        <footer className="footer">
+            <br/><br/><br/>
+        </footer>
     </>    
     
   );
