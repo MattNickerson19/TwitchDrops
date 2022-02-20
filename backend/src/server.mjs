@@ -1,9 +1,12 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
+import path from 'path';
+
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'build')));
 
 const parseAndLabelDropDate = (startString, endString) => {
     //parse the strings from db
