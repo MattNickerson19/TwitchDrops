@@ -36,6 +36,7 @@ function App() {
           <Route path="/" element={<LandingPage drops={drops} />} />
           <Route path="/FAQS" element={<FaqPage faqs={faqs}/>} />
           
+          
 {/*
           <Route path="/PreviousDrops" element={<PreviousDrops drops={drops} />} />
           <Route path="/FutreDrops" element={<FutureDrops drops={drops} />} />

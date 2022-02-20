@@ -121,9 +121,12 @@
 }
 
 .carousel-title {
-  background-color: black;
-  color: #6441A5;
-  font-size: 250%;
+  font-size: 200%;
+  color: white;
+  text-shadow: 4px 3px 4px #FEF9EB;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .carousel-border{

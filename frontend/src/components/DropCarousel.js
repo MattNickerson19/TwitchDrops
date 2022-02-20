@@ -24,7 +24,7 @@ export default function DropCarousel({drops}){
    
     <>
         <Row>
-            <Col className="carousel-title-banner"><strong className="carousel-title">Previous Drops</strong></Col>
+            <Col className="carousel-title-banner"><strong className="carousel-title">PREVIOUS DROPS</strong></Col>
         </Row>
         <Row>
             <Col className=" bg-black" md={2}></Col>
@@ -41,7 +41,6 @@ export default function DropCarousel({drops}){
             </Col>
             <Col className="bg-black" md={2}></Col>
         </Row>
-        <br/><br/>
     </>    
     
   );
