@@ -166,3 +166,9 @@
   }
 }
 
+.timer{
+  margin-top: 10%;
+  background-color: rgb(214, 77, 100);
+  z-index: 2;
+}
+
