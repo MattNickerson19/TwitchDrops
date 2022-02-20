@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
 
-
 const app = express();
 app.use(bodyParser.json());
 
@@ -28,7 +27,9 @@ const parseAndLabelDropDate = (startString, endString) => {
     }else if(startDate > currentDate){
       return "future";
     }  
-  }
+}
+
+//------DROPS------
 
 //Get all drops currently stored in the DB
 app.get("/api/drops", async (req, res) => {
@@ -49,27 +50,32 @@ app.get("/api/drops", async (req, res) => {
     
 });
 
-//Add new drop(s) to the DB
-app.post('/api/addDrop', async (req, res) => {
+//Overwrite drops in the DB
+app.post('/api/addDrops', async (req, res) => {
     try {
         const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true});
         const db = client.db('pw_drops');
 
+        //delete all currently existing drops
+        await db.collection("drops").remove({});
+
         //if a list of drops is being sent, add them all
         if(req.body.length > 0){
             for(let i = 0; i < req.body.length; i++){
-                await db.collection('drops').insertOne( {streamer_name:req.body[i].streamer_name, 
-                    item_name:req.body[i].item_name, item_icon:req.body[i].item_icon, 
-                    itemdefid:req.body[i].itemdefid, unlock_condition:req.body[i].unlock_condition});
+                await db.collection('drops').insertOne( 
+                    {start_date:req.body[i].start_date,
+                    end_date:req[i].end_date,
+                    name:req[i].name,
+                    drops:req[i].drops});
             }
-            //this single line would work as well, but it could possibly allow bad data in
-            // await db.collection('drops').insertMany( req.body); 
         }
         //if only one drop is sent, then only add the one
         else{
-            await db.collection('drops').insertOne( {streamer_name:req.body.streamer_name, 
-                item_name:req.body.item_name, item_icon:req.body.item_icon, 
-                itemdefid:req.body.itemdefid, unlock_condition:req.body.unlock_condition});
+            await db.collection('drops').insertOne( 
+                {start_date:req.body.start_date,
+                end_date:req.body.end_date,
+                name:req.body.name,
+                drops:req.body.drops});
         } 
         res.status(200).json({message: "Success"});
         client.close();
@@ -78,6 +84,45 @@ app.post('/api/addDrop', async (req, res) => {
         res.status(500).json( { message: "Error connecting to db", error});
     }
 });
+
+//Modify drop(s) in the DB UNFINISHED
+app.post('/api/modDrops', async (req, res) => {
+    try {
+        const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true});
+        const db = client.db('pw_drops');
+
+        //if a list of drops is sent, modify them all
+        if(req.body.length > 0){
+            for(let i = 0; i < req.body.length; i++){
+                await db.collection('drops').updateOne(
+                    {name:req.body[i].name},
+                    {$set: {
+                        start_date:req.body[i].start_date,
+                        end_date:req.body[i].endDate,
+                        drops:req.body[i].drops
+                    }});
+            }
+        }else{
+            console.log('check one');
+            console.log(req.body.name);
+            await db.collection('drops').updateOne(
+                {name:req.body.name},
+                {$set: {
+                    start_date:req.body.start_date,
+                    end_date:req.body.end_date,
+                    drops:req.body.drops
+                }});
+        }
+        
+        res.status(200).json({message: "Success"});
+        client.close();
+    }
+    catch( error) {
+        res.status(500).json( { message: "Error connecting to db", error});
+    }
+});
+
+//------FAQS------
 
 //Get all faq currently stored in the DB
 app.get("/api/faq", async (req, res) => {
@@ -107,8 +152,6 @@ app.post('/api/addFAQ', async (req, res) => {
                 await db.collection('faq').insertOne( {question:req.body[i].question, 
                     answer:req.body[i].answer});
             }
-            //this single line would work as well, but it could possibly allow bad data in
-            // await db.collection('faq').insertMany( req.body); 
         }
         //if only one faq is sent, then only add the one
         else{
