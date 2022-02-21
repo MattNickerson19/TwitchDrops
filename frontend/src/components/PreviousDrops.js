@@ -5,6 +5,12 @@ import { Row, Col } from "react-bootstrap";
 
 
 
-const PreviousDrops = ({drops}) => {
-    return(null)
+export function PreviousDrops({drops}){
+    return(
+        <>
+            <Header />
+            <ConnectBar />
+            <DropCarousel drops={drops} />
+        </>
+    )    
 }
