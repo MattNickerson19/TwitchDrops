@@ -10,7 +10,9 @@ export function PreviousDrops({drops}){
         <>
             <Header />
             <ConnectBar />
+            <div className="PreviousDrops-padding"></div>
             <DropCarousel drops={drops} />
+            
         </>
     )    
 }

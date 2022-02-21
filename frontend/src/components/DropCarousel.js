@@ -27,10 +27,16 @@ export default function DropCarousel({drops}){
     for(drops in dropBox){
         if(drops.drop_status === "past"){
             carouselTitle = "PREVIOUS DROPS"
+            console.log("PAST")
+            console.log(carouselTitle)
         }else if(drops.drop_status === "future"){
             carouselTitle = "FUTURE DROPS"
+            console.log("FUTURE")
+            console.log(carouselTitle)
         }
     }
+    console.log(carouselTitle)
+    
     
   return (
    
