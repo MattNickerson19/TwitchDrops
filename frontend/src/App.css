@@ -164,12 +164,24 @@
   margin: auto;
   margin-top: 10%;
   z-index: 2;
-  border-radius: 35px;
+  border-radius: 35px !important;
 }
 
 .clock_image{
   height: 22px;
   margin-right: 10px;
+}
+
+@media screen and (min-width: 1150px) {
+  .connect_bar::after{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .timer_row p{
+    font-size: 1em;
+  }
 }
 
 .timer{
@@ -203,14 +215,3 @@
   padding: 20px;
 }
 
-@media screen and (min-width: 1150px) {
-  .connect_bar::after{
-    display: none;
-  }
-}
-
-@media screen and (max-width: 650px){
-  .timer_row p{
-    font-size: 1em;
-  }
-}
