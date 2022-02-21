@@ -92,7 +92,7 @@
 }
 
 .drop_container{
-  margin-bottom: 15px;
+  margin-bottom: 70px;
 }
 
 .DropCarousel {
@@ -194,10 +194,6 @@
   background-color: #2B2452;
 }
 
-.drop_container-bottom-spacing{
-  padding: 100px;
-}
-
 .carousel-title-left-wrapper{
   background-color: #2B2452;
   width: 100%;
@@ -208,6 +204,7 @@
   background-color: #2B2452;
   width: 100%;
   float: right;
+}
 
 .right-side-carousel-block{
   column-width: 40%;
@@ -238,11 +235,6 @@
   .connect_bar::after{
     display: none;
   }
-}
-
-
-.drop_container{
-  background-color: #2B2452;
 }
 
 .footer{

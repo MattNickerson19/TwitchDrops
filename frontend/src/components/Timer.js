@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const Timer = ({drops}) => {
     const currentDrop = drops.filter(drop => drop.drop_status === "current");
+    console.log(currentDrop);
     let timeLeft = {}
 
     const calculateRemainingTime = () => { 

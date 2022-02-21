@@ -43,7 +43,7 @@ const parseAndLabelDropDate = (startString, endString) => {
 app.get("/api/drops", async (req, res) => {
     try{
         const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser : true} );
-        const db = client.db("twitchDrops");
+        const db = client.db("pw_drops");
 
         const drops = await db.collection("drops").find({}).toArray();
         for(let drop of drops){
@@ -136,9 +136,9 @@ app.post('/api/modDrops', async (req, res) => {
 app.get("/api/faq", async (req, res) => {
     try{
         const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser : true} );
-        const db = client.db("twitchDrops");
+        const db = client.db("pw_drops");
 
-        const faqs = await db.collection("faqs").find({}).toArray();
+        const faqs = await db.collection("faq").find({}).toArray();
         res.status(200).json(faqs);
         client.close();
     }
@@ -152,7 +152,7 @@ app.get("/api/faq", async (req, res) => {
 app.post('/api/addFAQ', async (req, res) => {
     try {
         const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true});
-        const db = client.db('twitchDrops');
+        const db = client.db('pw_drops');
 
         //if a list of faq is being sent, add them all
         if(req.body.length > 0){
@@ -163,7 +163,7 @@ app.post('/api/addFAQ', async (req, res) => {
         }
         //if only one faq is sent, then only add the one
         else{
-            await db.collection('faqs').insertOne( {question:req.body.question, 
+            await db.collection('faq').insertOne( {question:req.body.question, 
                 answer:req.body.answer});
         } 
         res.status(200).json({message: "Success"});
