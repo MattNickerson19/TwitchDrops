@@ -50,14 +50,15 @@
 
 .connect_bar{
   position: relative;
-  /* background-color: #2B2452; */
-  background-image: linear-gradient(240deg, #59566e, #2B2452);
+  background-color: #302f38;
+  /* background-image: linear-gradient(240deg, #59566e, #2B2452); */
   text-align: center;
   color: white;
   min-height: 120px;
   max-height: 120px;
   box-sizing: border-box;
   z-index: 1;
+  opacity: .9;
 }
 
 .connect_bar::after{
@@ -88,6 +89,10 @@
   width: 100%;
   margin: 26px;
   padding-top: 35px;
+}
+
+.drop_container{
+  margin-bottom: 15px;
 }
 
 .DropCarousel {
@@ -146,7 +151,11 @@
   column-width: 40%;
 }*/
 .landing{
-  background-color: #61dafb;
+  /* background-color: #61dafb; */
+  background-image: url('https://projectwinter.co/src/assets/xbox-trailer.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .card{
@@ -168,7 +177,26 @@
 
 .timer{
   margin-top: 10%;
-  background-color: rgb(214, 77, 100);
+  /* background-color: rgb(243, 86, 112); */
+  /* background-color: #434852; */
   z-index: 2;
+  border-radius: 20px;
+  border-color: #2B2452;
+  border-width: 10px;
+  /* opacity: .8; */
+  color: white;
+}
+
+.timer_row{
+  background-color: #282c34;
+  border-radius: 15px;
+  opacity: .9;
+  padding-top: 15px;
+}
+
+.footer{
+  background-color: #282c34;
+  color: azure;
+  padding: 20px;
 }
 

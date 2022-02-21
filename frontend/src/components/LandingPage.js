@@ -3,6 +3,7 @@ import { DropContainer } from "./DropContainer"
 import Header from "./Header"
 import DropCarousel from "./DropCarousel"
 import Timer from './Timer'
+import Footer from './Footer'
 
 const LandingPage = ({drops}) => {
   return (
@@ -12,6 +13,7 @@ const LandingPage = ({drops}) => {
         <Timer drops={drops}></Timer>
         <DropContainer drops={drops} category={"current"}></DropContainer>
         <DropCarousel drops={drops} />
+        <Footer></Footer>
       </div>
     
   )

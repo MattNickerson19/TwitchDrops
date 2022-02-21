@@ -43,14 +43,14 @@ const Timer = ({drops}) => {
         <Row>
         <Col><h1>{currentDrop[0].name}</h1></Col>
         </Row>
-        <Row>
-            <Col><p>DAYS</p></Col>
+        <Row className='timer_row'>
+            <Col><p>DAYS:</p></Col>
             <Col><p>{timeLeft.days}</p></Col>
-            <Col><p>HOURS</p></Col>
+            <Col><p>HOURS:</p></Col>
             <Col><p>{timeLeft.hours}</p></Col>
-            <Col><p>MINUTES</p></Col>
+            <Col><p>MINUTES:</p></Col>
             <Col><p>{timeLeft.minutes}</p></Col>
-            <Col><p>SECONDS</p></Col>
+            <Col><p>SECONDS:</p></Col>
             <Col><p>{timeLeft.seconds}</p></Col>
         </Row>
     </Container>

@@ -6,6 +6,7 @@ export function Drop({item_name, unlock_condition, streamer_name, item_icon, ite
         <>
             <Card 
             bg='dark'  
+            border='info'
             text='white'
             style={{ width: '18rem' }}
             >
