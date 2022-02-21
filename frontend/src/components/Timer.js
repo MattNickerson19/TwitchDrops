@@ -39,7 +39,7 @@ const Timer = ({drops}) => {
       });
    
   return (
-    <Container className='timer'>
+    <Container fluid='auto' className='timer'>
         <Row>
         <Col><h1>{currentDrop[0].name}</h1></Col>
         </Row>

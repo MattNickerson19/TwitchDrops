@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 .App {
   text-align: center;
 }
@@ -162,17 +164,12 @@
   margin: auto;
   margin-top: 10%;
   z-index: 2;
+  border-radius: 35px;
 }
 
 .clock_image{
   height: 22px;
   margin-right: 10px;
-}
-
-@media screen and (min-width: 1150px) {
-  .connect_bar::after{
-    display: none;
-  }
 }
 
 .timer{
@@ -182,9 +179,10 @@
   z-index: 2;
   border-radius: 20px;
   border-color: #2B2452;
-  border-width: 10px;
+  border-width: 2px;
   /* opacity: .8; */
   color: white;
+  font-family: 'Quicksand', cursive;
 }
 
 .timer_row{
@@ -194,9 +192,25 @@
   padding-top: 15px;
 }
 
+
+.timer_row p{
+  font-size: 1.5em;
+}
+
 .footer{
   background-color: #282c34;
   color: azure;
   padding: 20px;
 }
 
+@media screen and (min-width: 1150px) {
+  .connect_bar::after{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .timer_row p{
+    font-size: 1em;
+  }
+}
