@@ -2,6 +2,8 @@ import React from "react";
 import Carousel from "react-elastic-carousel";
 import { Drop }from "./Drop";
 import { Row, Col } from "react-bootstrap";
+import LeftSideImage from "../images/Hero_shot_hunter.png";
+import RightSideImage from "../images/Hero_shot_weasel.png";
 
 
 
@@ -12,22 +14,44 @@ export default function DropCarousel({drops}){
         { width: 550, itemsToShow: 2, itemsToScroll: 2 },
         { width: 768, itemsToShow: 3 },
         { width: 1200, itemsToShow: 4 }
-      ];
+    ];
+
+    let carouselTitle = "";
 
     //exclude all but the past drops
     const dropBox = []
     for(let drop of drops.filter(drop => drop.drop_status === "past")){
         dropBox.push(...drop.drops);
     }
+
+    for(drops in dropBox){
+        if(drops.drop_status === "past"){
+            carouselTitle = "PREVIOUS DROPS"
+            console.log("PAST")
+            console.log(carouselTitle)
+        }else if(drops.drop_status === "future"){
+            carouselTitle = "FUTURE DROPS"
+            console.log("FUTURE")
+            console.log(carouselTitle)
+        }
+    }
+    console.log(carouselTitle)
+    
     
   return (
    
     <>
-        <Row>
-            <Col className="carousel-title-banner"><strong className="carousel-title">Previous Drops</strong></Col>
+        <Row className="carousel-title-row">
+            <Col className="carousel-title-left-wrapper"></Col>
+            <Col className="carousel-title-banner">       
+                <strong className="carousel-title">PREVIOUS DROPS</strong>
+            </Col>
+            <Col className="carousel-title-right-wrapper"></Col>
         </Row>
         <Row>
-            <Col className=" bg-black" md={2}></Col>
+            <Col className="leftSide-column" md={2}>
+                <img className="leftSide-carousel-image" src={LeftSideImage} />
+            </Col>
             <Col className="DropCarousel">
                 <div className="carousel-border">
                     <Row className="carousel-wrapper">
@@ -39,9 +63,13 @@ export default function DropCarousel({drops}){
                     </Row>
                 </div>
             </Col>
-            <Col className="bg-black" md={2}></Col>
+            <Col className="rightSide-column" md={2}>
+            <img className="rightSide-carousel-image" src={RightSideImage} />
+            </Col>
         </Row>
-        <br/><br/>
+        <footer className="footer">
+            <br/><br/><br/>
+        </footer>
     </>    
     
   );
