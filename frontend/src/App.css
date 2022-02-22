@@ -59,6 +59,7 @@
   box-sizing: border-box;
   z-index: 1;
   opacity: .9;
+  font-family: 'Quicksand';
 }
 
 .connect_bar::after{

@@ -8,7 +8,10 @@ export function Drop({item_name, unlock_condition, streamer_name, item_icon, ite
             bg='dark'  
             border='secondary'
             text='white'
-            style={{ width: '18rem' }}
+            style={{ 
+                width: '18rem',
+                fontFamily: 'Quicksand' 
+            }}
             >
             <Card.Img variant="top" src={item_icon} />
             <Card.Body>

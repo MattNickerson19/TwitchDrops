@@ -5,7 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 const Header = () => {
   return (
     <Navbar bg='dark' variant='dark' expand={false}>
-        <Navbar.Brand>
+        <Navbar.Brand style={{
+          fontFamily: 'Quicksand'
+        }}>
             <img className='header_logo' src={white_logo}/>
             Project Winter Twitch Drops
         </Navbar.Brand>
