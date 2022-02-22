@@ -4,16 +4,44 @@ const ConnectBar = () => {
   return (
     <Container className='connect_bar' fluid={true}>
         <Row>
-            <Col xs={2}>
-                <Image className="connect_bar_image" rounded="true" src='https://blog.twitch.tv/assets/uploads/generic-email-header-1.jpg'/>
+            <Col>
+                <h1>Connect Accounts</h1>
+            </Col>
+        </Row>
+        <Row>
+            <Col>
             </Col>
             <Col>
-                <a href="/ConnectPage"><Button variant='warning' size='xxl'>Connect Accounts</Button></a>
             </Col>
-            <Col xs={2}>
-                <Image className="connect_bar_image" rounded="true" src='https://i.ytimg.com/vi/VJVVT5dJ6v4/maxresdefault.jpg'/>
-            </Col>
+            <Col>
+                <Button variant='warning' size='xxl' style={{
+                    backgroundImage: 'url(https://blog.twitch.tv/assets/uploads/generic-email-header-1.jpg)',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '70px',
+                    width: '180px',
+                    marginTop: '0'
+                }}></Button>
+                
+            </Col>  
+            <Col>
 
+            </Col>
+            <Col>
+            <Button variant='warning' size='xxl' style={{
+                    backgroundImage: 'url(https://i.ytimg.com/vi/VJVVT5dJ6v4/maxresdefault.jpg)',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '70px',
+                    width: '180px',
+                    marginTop: '0'
+                }}></Button>
+
+            </Col>
+            <Col>
+            </Col>
+            <Col>
+            </Col>
         </Row>
     </Container>
     
