@@ -1,12 +1,10 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import {Routes, Route, Link } from "react-router-dom";
-import { DropContainer } from "./components/DropContainer";
-import { Drop } from "./components/Drop";
-import Header from './components/Header';
+import { Routes, Route } from "react-router-dom";
 import LandingPage from './components/LandingPage';
 import { FaqPage } from "./components/FaqPage"; 
 import { PreviousDrops } from "./components/PreviousDrops";
+import FutureDrops from './components/FutureDrops'
 
 
 
@@ -37,11 +35,10 @@ function App() {
           <Route path="/" element={<LandingPage drops={drops} />} />
           <Route path="/FAQS" element={<FaqPage faqs={faqs}/>} />
           <Route path="/PreviousDrops" element={<PreviousDrops drops={drops} />} />
+          <Route path="/FutureDrops" element={<FutureDrops drops={drops} />} />
           
           
-{/*
-          
-          <Route path="/FutreDrops" element={<FutureDrops drops={drops} />} />
+        {/*      
           <Route path="/ConnectPage" element={<ConnectAccounts />} />
           <Route path="/ProjectWinter" element={<ProjectWinter />} /> */}
         </Routes>

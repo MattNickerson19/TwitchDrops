@@ -8,7 +8,7 @@ const Header = () => {
         <Navbar.Brand style={{
           fontFamily: 'Quicksand'
         }}>
-            <img className='header_logo' src={white_logo}/>
+            <img alt='project winter logo' className='header_logo' src={white_logo}/>
             Project Winter Twitch Drops
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='menu'/>
@@ -16,8 +16,7 @@ const Header = () => {
             <Nav>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/PreviousDrops">Previous Drops</Nav.Link>
-                <Nav.Link href="#">Future Drops</Nav.Link>
-                <Nav.Link href="/ConnectPage">Connect</Nav.Link>
+                <Nav.Link href="/FutureDrops">Future Drops</Nav.Link>
                 <Nav.Link href="/FAQS">FAQ</Nav.Link>
                 <Nav.Link href="https://projectwinter.co/">Official Site</Nav.Link>
             </Nav>

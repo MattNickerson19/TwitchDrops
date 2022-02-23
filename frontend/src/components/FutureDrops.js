@@ -1,10 +1,14 @@
-import ConnectBar from "./ConnectBar"
-import Header from "./Header"
-import DropCarousel from "./DropCarousel";
-import { Row, Col } from "react-bootstrap";
+import React from 'react'
+import Header from './Header'
+import DropCarousel from './DropCarousel'
 
-
-
-const FuturesDrops = ({drops}) => {
-    return(null)
+const FutureDrops = ({drops}) => {
+  return (
+      <>
+        <Header></Header>
+        <DropCarousel drops={drops} keyword={'future'}/>
+      </>
+  )
 }
+
+export default FutureDrops
