@@ -36,15 +36,9 @@ function App() {
           <Route path="/FAQS" element={<FaqPage faqs={faqs}/>} />
           <Route path="/PreviousDrops" element={<PreviousDrops drops={drops} />} />
           <Route path="/FutureDrops" element={<FutureDrops drops={drops} />} />
-          
-          
-        {/*      
-          <Route path="/ConnectPage" element={<ConnectAccounts />} />
-          <Route path="/ProjectWinter" element={<ProjectWinter />} /> */}
         </Routes>
       </div>
     </>  
-
   )
 }
 

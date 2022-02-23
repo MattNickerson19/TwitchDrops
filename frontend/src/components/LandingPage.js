@@ -12,10 +12,9 @@ const LandingPage = ({drops}) => {
         <ConnectBar></ConnectBar>
         <Timer drops={drops}></Timer>
         <DropContainer drops={drops} category={"current"}></DropContainer>
-        <DropCarousel drops={drops} />
+        <DropCarousel drops={drops} keyword='past'/>
         <Footer></Footer>
-      </div>
-    
+      </div> 
   )
 }
 
