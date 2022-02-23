@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '/build')));
 
 const parseAndLabelDropDate = (startString, endString) => {
     //parse the strings from db
