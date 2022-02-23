@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '/build')));
 
 //GUID KEY 
 // Efn84FSfwzxAA193
