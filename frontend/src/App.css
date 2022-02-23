@@ -258,6 +258,17 @@
   }
 }
 
+@media screen and (max-width: 400px){
+  .timer_row p{
+    font-size: .7em !important;
+  }
+
+  .connect_bar Button{
+    height: 60px !important;
+    width: 120px !important;
+  }
+}
+
 .timer{
   margin-top: 10%;
   /* background-color: rgb(243, 86, 112); */
