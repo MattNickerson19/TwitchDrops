@@ -7,7 +7,7 @@ import RightSideImage from "../images/Hero_shot_weasel.png";
 
 
 
-export default function DropCarousel({drops, keyword}){
+export default function DropCarousel({drops, title}){
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
@@ -16,26 +16,13 @@ export default function DropCarousel({drops, keyword}){
         { width: 1200, itemsToShow: 4 }
     ];
 
-    //exclude all but the past drops
-    const dropBox = []
-    for(let drop of drops.filter(drop => drop.drop_status === keyword)){
-        dropBox.push(...drop.drops);
-    }
-
-    let carouselTitle = '';
-    if(keyword === "past"){
-        carouselTitle = "PREVIOUS DROPS"
-    }else if(keyword === "future"){
-        carouselTitle = "FUTURE DROPS"
-    }
- 
   return (
    
     <>
         <Row className="carousel-title-row">
             <Col className="carousel-title-left-wrapper"></Col>
             <Col className="carousel-title-banner">       
-                <strong className="carousel-title">{carouselTitle}</strong>
+                <strong className="carousel-title">{title}</strong>
             </Col>
             <Col className="carousel-title-right-wrapper"></Col>
         </Row>
@@ -47,7 +34,7 @@ export default function DropCarousel({drops, keyword}){
                 <div className="carousel-border">
                     <Row className="carousel-wrapper">
                         <Carousel breakPoints={breakPoints}>
-                            {dropBox.map((drop) => (
+                            {drops.map((drop) => (
                             <Drop key={drop.item_name} {...drop} />
                             ))}
                         </Carousel>
