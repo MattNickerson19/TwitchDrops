@@ -143,16 +143,12 @@ app.post('/api/modDrops', async (req, res) => {
 //Get all faq currently stored in the DB
 app.get("/api/faq", async (req, res) => {
     try{
-        if(req.query.id == 'Efn84FSfwzxAA193'){
             const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser : true} );
             const db = client.db("pw_drops");
 
             const faqs = await db.collection("faq").find({}).toArray();
             res.status(200).json(faqs);
             client.close();
-        }else{
-            res.send('Invalid GUID key.');
-        }
     }
     catch(error){
         res.status(500).json( {message: "Error connecting to db", error});
