@@ -7,7 +7,7 @@ import RightSideImage from "../images/Hero_shot_weasel.png";
 
 
 
-export default function DropCarousel({drops, title}){
+export default function DropCarousel({drops, title, start_date, end_date}){
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
@@ -20,11 +20,11 @@ export default function DropCarousel({drops, title}){
    
     <>
         <Row className="carousel-title-row">
-            <Col className="carousel-title-left-wrapper"></Col>
+            <Col className="date_column"><p>START</p>{start_date}</Col>
             <Col className="carousel-title-banner">       
-                <strong className="carousel-title">{title}</strong>
+                <h1 className="carousel-title">{title}</h1>
             </Col>
-            <Col className="carousel-title-right-wrapper"></Col>
+            <Col className='date_column'><p>END</p>{end_date}</Col>
         </Row>
         <Row>
             <Col className="leftSide-column" md={2}>

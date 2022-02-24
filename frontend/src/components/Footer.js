@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <div className='footer'>
-        <p>This is a very bare-bones footer component</p>
+        <p>Group 2</p>
     </div>
   )
 }

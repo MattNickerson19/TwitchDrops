@@ -65,7 +65,7 @@ app.post('/api/addDrops', async (req, res) => {
     try {
         if(req.query.id == 'Efn84FSfwzxAA193'){
             const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true});
-            const db = client.db('twitchDrops');
+            const db = client.db('pw_drops');
     
             //delete all currently existing drops
             await db.collection("drops").remove({});
