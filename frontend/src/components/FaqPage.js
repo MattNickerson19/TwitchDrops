@@ -4,7 +4,7 @@ import Header from "./Header"
 
 export function FaqPage ({faqs}){
   return (
-      <div className="bg-secondary" style={{height:"100vh"}}>
+      <div style={{height:"100vh", backgroundColor:"#665A93"}}>
         <Header></Header>
         <FaqContainer faqs={faqs}></FaqContainer>
       </div>
