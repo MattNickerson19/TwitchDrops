@@ -102,7 +102,7 @@ app.post('/api/addDrops', async (req, res) => {
 //Modify drop(s) in the DB
 app.post('/api/modDrops', async (req, res) => {
     try {
-        if(req.query.id == 'Efn84FSfwzxAA193'){
+        if(req.headers.id == 'Efn84FSfwzxAA193'){
             const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true});
             const db = client.db('pw_drops');
     
